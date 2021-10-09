@@ -1,0 +1,27 @@
+<!DOCTYPE struts PUBLIC 
+		"-//Apache Software Fundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd" >
+
+<struts>
+	 <constant name="struts.devMode" value="true" />
+
+	<package name="br.com.atomicweb.action" extends="struts-default">
+		<action name="teste" class="br.com.atomicweb.action.IndexAction">
+			<result name="sucess">/</result>
+		</action>
+		
+		<action name="contato" class="br.com.atomicweb.action.ContatoAction">
+			<result name="success">/WEB-INF/contatoList.jsp</result>
+		</action>
+		
+		<action name="novocontato" class="br.com.atomicweb.action.ContatoAction" method="novo">
+			<result name="success">/WEB-INF/contato.jsp</result>
+		</action>
+		
+		<action name="editarcontato" class="br.com.atomicweb.action.ContatoAction" method="editar">
+			<param name="id">/WEB-INF/contato.jsp</param>
+			<result name="success">/WEB-INF/contato.jsp</result>
+		</action>
+		
+	</package>
+</struts>
