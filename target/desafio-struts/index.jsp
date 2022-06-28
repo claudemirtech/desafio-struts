@@ -5,16 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Contato</title>
+<title>Home</title>
 </head>
 <body>
-
-	<s:form action="contato">
-		<s:textfield name="c.id" label="Id"></s:textfield>
-		<s:textfield name="c.nome" label="Nome"></s:textfield>
-		<s:textfield name="c.email" label="Email"></s:textfield>
-		<s:submit value="Salvar"></s:submit>
-	</s:form>
-
+<%
+out.print("hello world");
+%>
+<s:a href="contato">Contato</s:a>
 </body>
 </html>

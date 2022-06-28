@@ -1,0 +1,5 @@
+br/com/atomicweb/model/Contato.class
+br/com/atomicweb/action/ContatoAction.class
+br/com/atomicweb/action/IndexAction.class
+br/com/atomicweb/repository/Contatos.class
+br/com/atomicweb/App.class
