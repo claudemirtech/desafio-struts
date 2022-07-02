@@ -5,23 +5,25 @@
 <struts>
 	 <constant name="struts.devMode" value="true" />
 
-	<package name="br.com.atomicweb.action" extends="struts-default">
+	<package name="cotatoManagement" extends="struts-default">
 		<action name="teste" class="br.com.atomicweb.action.IndexAction">
 			<result name="sucess">/</result>
 		</action>
 		
 		<action name="contato" class="br.com.atomicweb.action.ContatoAction">
-			<result name="success">/WEB-INF/contatoList.jsp</result>
+			<result name="success">/jsp/contatoList.jsp</result>
 		</action>
 		
 		<action name="novocontato" class="br.com.atomicweb.action.ContatoAction" method="novo">
-			<result name="success">/WEB-INF/contato.jsp</result>
+			<result name="success">/jsp/contato.jsp</result>
 		</action>
 		
 		<action name="editarcontato" class="br.com.atomicweb.action.ContatoAction" method="editar">
-			<param name="id">/WEB-INF/contato.jsp</param>
-			<result name="success">/WEB-INF/contato.jsp</result>
+			<result name="success">/jsp/contato.jsp</result>
 		</action>
-		
+
+		<action name="excluircontato" class="br.com.atomicweb.action.ContatoAction" method="excluir">
+			<result name="success">/jsp/contatoList.jsp</result>
+		</action>
 	</package>
 </struts>

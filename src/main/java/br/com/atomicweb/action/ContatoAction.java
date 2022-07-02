@@ -1,72 +1,57 @@
 package br.com.atomicweb.action;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 import br.com.atomicweb.model.Contato;
+import com.opensymphony.xwork2.ActionSupport;
+import lombok.Data;
 
+@Data
 public class ContatoAction extends ActionSupport {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8205834090635913361L;
-	private Contato c;
-	private List<Contato> lista;
-	private Long id;
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	private Integer id;
+	private String nome;
+	private String email;
+	private Contato contato;
+	private List<Contato> contatos;
 
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		lista = new ArrayList<>();
-		c = new Contato();
-		c.setId(Long.parseLong("1"));
-		c.setNome("Claudemir");
-		c.setEmail("claudemir@bsd.com.br");
-		lista.add(c);
-		c = new Contato();
-		c.setId(Long.parseLong("2"));
-		c.setNome("Karine");
-		c.setEmail("karine@gmail.com.br");
-		lista.add(c);
+		contatos = new ArrayList<>();
+		contato = new Contato();
+		contato.setId(1);
+		contato.setNome("Claudemir");
+		contato.setEmail("claudemir@bsd.com.br");
+		contatos.add(contato);
+		contato = new Contato();
+		contato.setId(2);
+		contato.setNome("Karine");
+		contato.setEmail("karine@gmail.com.br");
+		contatos.add(contato);
+		contato = new Contato();
+		contato.setId(this.id);
+		contato.setNome(this.nome);
+		contato.setEmail(this.email);
+		contatos.add(contato);
 		return SUCCESS;
 	}
 
 	public String novo() {
-		c = new Contato();
 		return SUCCESS;
 	}
 	
 	public String editar() {
-		c = new Contato();
-		System.out.println(this.id);
+		System.out.println("Editando... " + this.id);
 		return SUCCESS;
 	}
 
-	public List<Contato> getLista() {
-		return lista;
-	}
-
-	public void setLista(List<Contato> lista) {
-		this.lista = lista;
-	}
-
-	public Contato getC() {
-		return c;
-	}
-
-	public void setC(Contato c) {
-		this.c = c;
+	public String excluir() {
+		System.out.println("Excluindo... " + this.id);
+		return SUCCESS;
 	}
 
 }

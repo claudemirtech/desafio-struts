@@ -10,9 +10,9 @@
 <body>
 
 	<s:form action="contato">
-		<s:textfield name="c.id" label="Id"></s:textfield>
-		<s:textfield name="c.nome" label="Nome"></s:textfield>
-		<s:textfield name="c.email" label="Email"></s:textfield>
+		<s:textfield name="id" label="Id"></s:textfield>
+		<s:textfield name="nome" label="Nome"></s:textfield>
+		<s:textfield name="email" label="Email"></s:textfield>
 		<s:submit value="Salvar"></s:submit>
 	</s:form>
 
