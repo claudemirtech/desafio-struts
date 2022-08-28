@@ -5,7 +5,10 @@ import javax.persistence.EntityManager;
 
 import br.com.atomicweb.model.Contato;
 import br.com.atomicweb.repository.ContatoRepository;
+import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
+@RequiredArgsConstructor
 public class ContatoRepositoryImpl implements ContatoRepository {
 
 
@@ -13,44 +16,41 @@ public class ContatoRepositoryImpl implements ContatoRepository {
 	//https://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html
 	//https://gist.github.com/mlecoutre/4088178
 
-	public static EntityManager em;
+	public final EntityManager em;
 
 	@Override
 	public List<Contato> listaContato() {
-		em = CriaEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		return em.createQuery("select c from Contato c", Contato.class).getResultList();
 	}
 
-	public Contato getContato(Contato contato) {
-		em = CriaEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+	@Override
+	public Contato getContato(@NotNull Contato contato) {
 		return (Contato) em.createQuery("select c from Contato c where id = :id")
 			.setParameter("id", contato.getId())
 			.getSingleResult();
 	}
 
+	@Override
 	public void salvaContato(Contato contato) {
-		EntityManager em = CriaEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		em.getTransaction().begin();
 		em.persist(contato);
 		em.getTransaction().commit();
-		em.close();
+//		em.close();
 	}
-
+	@Override
 	public void editaContato(Contato contato) {
-		EntityManager em = CriaEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		em.getTransaction().begin();
 		em.merge(contato);
 		em.flush();
 		em.getTransaction().commit();
-		em.close();
+//		em.close();
 	}
-
+	@Override
 	public void deletaContato(Contato contato) {
-		EntityManager em = CriaEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		em.getTransaction().begin();
 		em.remove(em.contains(contato) ? contato : em.merge(contato));
 		em.getTransaction().commit();
-		em.close();
+//		em.close();
 	}
 
 }

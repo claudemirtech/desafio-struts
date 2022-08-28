@@ -2,7 +2,11 @@ package br.com.atomicweb.action;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import br.com.atomicweb.model.Contato;
+import br.com.atomicweb.repository.impl.ContatoRepositoryImpl;
+import br.com.atomicweb.repository.impl.EntityManagerFactory;
 import br.com.atomicweb.service.ContatoService;
 import br.com.atomicweb.service.impl.ContatoServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
@@ -20,9 +24,12 @@ public class ContatoAction extends ActionSupport {
 	private List<Contato> contatos;
 
 	private ContatoService contatoService;
+	private EntityManager em;
+
 
 	public ContatoAction () {
-		contatoService = new ContatoServiceImpl();
+		em = EntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		contatoService = new ContatoServiceImpl(new ContatoRepositoryImpl(em));
 	}
 
 	@Override
@@ -37,6 +44,7 @@ public class ContatoAction extends ActionSupport {
 
 	public String salva() {
 		contato = new Contato();
+		contato.setId(this.id == null ? null : this.id);
 		contato.setNome(this.nome);
 		contato.setEmail(this.email);
 		if (contato.getId() == null) {
