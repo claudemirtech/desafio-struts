@@ -3,15 +3,14 @@ package br.com.atomicweb.repository.impl;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class CriaEntityManagerFactory {
-	private static EntityManagerFactory emf;
+public class EntityManagerFactory {
+	private static javax.persistence.EntityManagerFactory emf;
 	private static String PERSISTENCE_UNIT_NAME = "default";
 	private static String AMBIENTE = "local";
 
-	public static EntityManagerFactory getEntityManagerFactory() {
+	public static javax.persistence.EntityManagerFactory getEntityManagerFactory() {
 		if (emf == null) {
 			if (AMBIENTE.equals("heroku")) {
 				String databaseUrl = System.getenv("DATABASE_URL");
