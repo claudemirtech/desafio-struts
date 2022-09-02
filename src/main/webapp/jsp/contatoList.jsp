@@ -14,7 +14,7 @@
 <main role="main" class="container">
 <h1>Êxito</h1>
 
-<s:a class="btn btn-primary" href="novocontato" >Novo</s:a>
+<s:a class="btn btn-primary" href="novocontato">Novo</s:a>
 
 <table class="table table-sm table-striped">
     <tr>

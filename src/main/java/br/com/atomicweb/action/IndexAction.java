@@ -15,4 +15,8 @@ public class IndexAction extends ActionSupport {
 		return "sucess";
 	}
 
+	public String sair() {
+		return "sucess";
+	}
+
 }
