@@ -11,11 +11,6 @@
 </head>
 <body>
 <%@ include file="jsp/menu.jsp"%>
-<main role="main" class="container">
-    <%
-        out.print("hello world");
-    %>
-    <s:a href="contato">Contato</s:a>
-</main>
+<main role="main" class="container"></main>
 </body>
 </html>

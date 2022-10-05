@@ -22,6 +22,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
           <ul class="dropdown-menu" aria-labelledby="dropdown03">
             <li><a class="dropdown-item" href="/conta">Conta</a></li>
+            <li><a class="dropdown-item" href="contato">Contato</a></li>
             <li><a class="dropdown-item" href="/usuario">Usuário</a></li>
           </ul>
         </li>
