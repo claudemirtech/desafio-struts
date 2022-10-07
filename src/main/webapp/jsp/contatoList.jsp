@@ -10,36 +10,33 @@
     <title>Contatos</title>
 </head>
 <body>
-<%@ include file="menu.jsp"%>
+<%@ include file="menu.jsp" %>
 <main role="main" class="container">
-<h1>Êxito</h1>
-
-<s:a class="btn btn-primary" href="novocontato" >Novo</s:a>
-
-<table class="table table-sm table-striped">
-    <tr>
-        <td>Id</td>
-        <td>Nome</td>
-        <td>E-mail</td>
-        <td>Ações</td>
-    </tr>
-
-    <s:iterator value="contatos" var="contato">
+    <div style="padding-top: 20px; align-items: end;"><s:a class="btn btn-primary" href="novocontato">Novo</s:a></div>
+    <table class="table table-sm table-striped">
         <tr>
-            <td><s:property value="#contato.id"/></td>
-            <td><s:property value="#contato.nome"/></td>
-            <td><s:property value="#contato.email"/></td>
-            <td>
-				<a href="editarcontato?id=<s:property value="#contato.id"/>">
-					<button class="btn btn-warning">Editar</button>
-				</a>
-                <a href="excluircontato?id=<s:property value="#contato.id"/>">
-                    <button class="btn btn-danger">Excluir</button>
-                </a>
-            </td>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Ações</td>
         </tr>
-    </s:iterator>
-</table>
+
+        <s:iterator value="contatos" var="contato">
+            <tr>
+                <td><s:property value="#contato.id"/></td>
+                <td><s:property value="#contato.nome"/></td>
+                <td><s:property value="#contato.email"/></td>
+                <td>
+                    <a href="editarcontato?id=<s:property value="#contato.id"/>">
+                        <button class="btn btn-warning">Editar</button>
+                    </a>
+                    <a href="excluircontato?id=<s:property value="#contato.id"/>">
+                        <button class="btn btn-danger">Excluir</button>
+                    </a>
+                </td>
+            </tr>
+        </s:iterator>
+    </table>
 </main>
 </body>
 </html>

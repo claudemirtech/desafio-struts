@@ -1,3 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Menu</title>
+</head>
+<body>
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Atomic Web</a>
@@ -11,6 +22,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
           <ul class="dropdown-menu" aria-labelledby="dropdown03">
             <li><a class="dropdown-item" href="/conta">Conta</a></li>
+            <li><a class="dropdown-item" href="contato">Contato</a></li>
             <li><a class="dropdown-item" href="/usuario">Usuário</a></li>
           </ul>
         </li>
@@ -30,3 +42,5 @@
     </div>
   </div>
 </nav>
+</body>
+</html>
